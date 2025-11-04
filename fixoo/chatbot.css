@@ -18,6 +18,28 @@ body {
   overflow: hidden;
 }
 
+/* CABEÇALHO DO CHAT */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-emoji {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.chat-name {
+    font-size: 18px;
+}
+
 .chat-box {
   flex: 1;
   padding: 15px;
