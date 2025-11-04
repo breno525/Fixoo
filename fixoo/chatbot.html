@@ -8,7 +8,17 @@
 </head>
 <body>
   <div class="chat-container">
+    
+    <!-- Cabeçalho do chat com emoji e nome -->
+    <div class="chat-header">
+      <span class="chat-emoji">🤖</span>
+      <span class="chat-name">Bitto</span>
+    </div>
+
+    <!-- Caixa de mensagens -->
     <div class="chat-box" id="chat-box"></div>
+
+    <!-- Input de envio -->
     <div class="chat-input">
       <input type="text" id="user-input" placeholder="Digite uma mensagem...">
       <button onclick="sendMessage()">Enviar</button>
