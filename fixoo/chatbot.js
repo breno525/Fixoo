@@ -24,15 +24,57 @@ function addMessage(text, sender) {
 }
 
 function getBotResponse(input) {
-    input = input.toLowerCase();
+    input = input.toLowerCase().trim(); // Padroniza a entrada
 
-    if (input.includes('oi') || input.includes('opa') || input.includes('eai') || input.includes('.') || input.includes('a') || input.includes('Me ajuda')) {
-        return 'Olá! Como posso te ajudar?';
-    } else if (input.includes('nome')) {
-        return 'Meu nome é Bitto, Sou um 🤖 de suporte, qual a sua duvida?';
-    } else if (input.includes('tchau')) {
+   
+    // Saudação
+    if (
+        input.includes('oi') ||
+        input.includes('opa') ||
+        input.includes('eai') ||
+        input.includes('me ajuda')
+    ) {
+        return 'Olá! Me chamo Bitto 🤖 Como posso te ajudar? Para tirar dúvidas, digite "ajuda".';
+    }
+
+    // Solicita ajuda
+    else if (
+        input.includes('ajuda') ||
+        input.includes('quero saber') ||
+        input.includes('pergunta') ||
+        input.includes('socorro') ||
+        input.includes('gostaria de saber')
+    ) {
+        return 'Qual dos tópicos atende à sua pergunta? 1️⃣ - Gostaria de expor o meu empreendimento  2️⃣ - Como sei que irei receber o serviço solicitado 3️⃣ - Gostaria de atendimento humano';
+    }
+
+    // Expor empreendimento
+    else if (
+        input.includes('1') ||
+        input.includes('gostaria de expor o meu empreendimento') ||
+        input.includes('empreendimento') ||
+        input.includes('11')
+    ) {
+        return 'Para expor o seu empreendimento em nosso site, acesse a aba “Quero me tornar um fornecedor de serviços Fixoo”, localizada no canto inferior esquerdo.';
+    }
+
+    // Confirmação de serviço
+    else if (
+        input.includes('2') ||
+        input.includes('como sei que irei receber o serviço solicitado') ||
+        input.includes('servico') || // sem acento também
+        input.includes('22')
+    ) {
+        return 'Quando você solicita um serviço, utilizamos um sistema de códigos. Após a conclusão do serviço, o prestador solicita ao usuário um código de confirmação, garantindo que o serviço foi realizado com sucesso.';
+    }
+
+    // Despedida
+    else if (input.includes('tchau')) {
         return 'Até mais! 👋';
-    } else {
+    }
+
+    // Caso não entenda
+    else {
         return 'Desculpe, não entendi. Pode reformular?';
     }
 }
